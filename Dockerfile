@@ -18,6 +18,9 @@ WORKDIR /streamlit-docker
 COPY requirements.txt ./requirements.txt
 
 # install pip then packages
+# RUN pip3 uninstall Cython
+RUN python3 -m pip install -U pip
+RUN pip3 install Cython
 RUN pip3 install -r requirements.txt
 
 # copying all files over
